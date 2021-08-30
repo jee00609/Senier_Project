@@ -72,6 +72,7 @@ public class s3UploadController {
         response.put("message", message);
         response.put("url", imageUrl);
         
+        //성공
         try {
 			List <Label> rekognitionLabels = rekognitionService.rekognitionImage(imageUrl);
 			int i =0;
