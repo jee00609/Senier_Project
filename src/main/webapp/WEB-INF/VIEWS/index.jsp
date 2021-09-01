@@ -12,7 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--  
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style type="text/css">
         .content {
@@ -45,10 +48,7 @@
         <p id="message"></p>
         <p><a id="aws-link" target="_blank" href="#"></a></p>
         
-        <p>
-        	<ul style="list-style-type: none;" id="object">
-        	</ul>
-        </p>
+        <ul style="list-style-type: none;" id="object"></ul>
         
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -65,9 +65,7 @@
 
                 <form method="POST" action="/upload" enctype="multipart/form-data">
                     <div class="input-group mb-3">
-                        <input type="file" id="file" name="file" accept="image/*" class="form-control form-control-lg"
-                               placeholder="Click to select image to upload"
-                               aria-label="Click to select image to upload" aria-describedby="basic-addon2">
+                        <input type="file" id="file" name="file" onchange="readURL(this);" accept="image/*" class="form-control form-control-lg" placeholder="Click to select image to upload" aria-label="Click to select image to upload" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button id="upload" class="btn btn-outline-secondary1 btn-primary btn-lg" type="submit">
                                 Upload
@@ -75,7 +73,11 @@
                         </div>
                     </div>
                 </form>
+
                 <p class="text-right text-muted">Maximum supported image size is 10MB</p>
+                <p class="text-right text-muted">The image uploaded will be rendered inside the box below.</p>
+                <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
      
                 <form method="POST" action="/upload2" enctype="multipart/form-data">
                     <div class="input-group mb-3">
@@ -130,6 +132,8 @@
 <!-- ajax 화면 바꾸기 및 Rekognition 띄우기 -->
 <script src="../js/ajaxLoad.js"></script>
 
+<!-- 업로드할 이미지 프리뷰 -->
+<script src="../js/previewImage.js"></script>
 
 
 
