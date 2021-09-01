@@ -17,6 +17,10 @@
 
 ## 참고 이미지
 
+* 이미지 올린 후 Rekognition 을 통해 얻은 값 index 에 보이기 
+
 ![rekognition](https://user-images.githubusercontent.com/31675804/131493311-cc84baea-0e77-4e0f-982c-bfbdebe7f0f1.png)
+
+* 업로드할 이미지의 프리뷰 보이기
 
 ![upload Image Preview](https://user-images.githubusercontent.com/31675804/131618629-5968d163-f6ea-4bf8-851b-2e71ced017c8.png)
