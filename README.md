@@ -13,7 +13,7 @@
 
 1. 오디오가 저장되는데 저장 디렉토리를 변경시켜야 한다
 
-2. rekognition 으로 얻은 값들을 horizontal scroll 을 통해 출력하고 싶다
+2. rekognition 을 통해 얻은 Object 들을 Card 형태로 출력하고자 한다.
 
 ## 참고 이미지
 
@@ -24,3 +24,7 @@
 * 업로드할 이미지의 프리뷰 보이기
 
 ![upload Image Preview](https://user-images.githubusercontent.com/31675804/131618629-5968d163-f6ea-4bf8-851b-2e71ced017c8.png)
+
+* Card UI
+
+![Card](https://user-images.githubusercontent.com/31675804/131831160-cb8b9fcd-0ef2-4900-acca-2da6ca9c047b.gif)
