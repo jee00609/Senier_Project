@@ -142,10 +142,10 @@ function createDownloadLink(blob,encoding) {
 	//link the a element to the blob
 	link.href = url;
 	link.download = new Date().toISOString() + '.'+encoding;
-	link.innerHTML = '<br/><button class="btn_download"><i class="fa fa-download"></i> Download</button>';
+	//link.innerHTML = '<br/><button class="btn_download"><i class="fa fa-download"></i> Download</button>';
 	
 	//If you want to put the button aside
-	//link.innerHTML = '<button class="btn"><i class="fa fa-download"></i> Download</button>';
+	link.innerHTML = '<button class="btn_download"><i class="fa fa-download"></i> Download</button>';
 
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
