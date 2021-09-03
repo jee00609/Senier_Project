@@ -107,19 +107,20 @@
     </div>
 
     <div class="container h-50">
-	  <div class="row align-middle">
-	    <div class="col-md-6 col-lg-4 column">
+	  <div class="row align-middle" id="objectCardList">
+	  
+	  
+	    <div class="col-md-6 col-lg-4 column" id = "objectCard">
 	      <div class="card gr-1">
 	        <div class="txt">
 	          <h2>Car</h2>
 	          <p>Visual communication and problem-solving</p>
 	        </div>
 	        <a href="#">more</a>
-	        <div class="ico-card">
-	        <i class="fa fa-rebel"></i>
-	      </div>
 	      </div>
 	    </div>
+	    
+	    
 	    <div class="col-md-6 col-lg-4 column">
 	      <div class="card gr-2">
 	        <div class="txt">
@@ -127,11 +128,10 @@
 	          <p>How design is implemented on the web.</p>
 	        </div>
 	        <a href="#">more</a>
-	      <div class="ico-card">
-	        <i class="fa fa-codepen"></i>
-	      </div>
 	      </div>
 	    </div>
+	    
+	    
 	    <div class="col-md-6 col-lg-4 column">
 	      <div class="card gr-3">
 	        <div class="txt">
@@ -139,14 +139,27 @@
 	          <p>User Interface and User Experience Design.</p>
 	        </div>
 	        <a href="#">more</a>
-	      <div class="ico-card">
-	        <i class="fa fa-empire"></i>
 	      </div>
+	    </div>
+	    
+	    <div class="col-md-6 col-lg-4 column">
+	      <div class="card gr-3">
+	        <div class="txt">
+	          <h2>Sunset</h2>
+	          <p>User Interface and User Experience Design.</p>
+	        </div>
+	        <a href="#">more</a>
 	      </div>
 	    </div>
 	    
 	  </div>
 	</div>
+	
+	<div class="row" id="contentPanel">
+
+    </div>
+
+
 
 
     <!-- Optional JavaScript -->
