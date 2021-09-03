@@ -13,7 +13,9 @@
 
 1. 오디오가 저장되는데 저장 디렉토리를 변경시켜야 한다
 
-2. rekognition 을 통해 얻은 Object 들을 Card 형태로 출력하고자 한다.
+2. Rekognition 으로 얻은 값을 Card 안에 추가하여 생성하기
+   * Rekognition 을 통해 얻은 Object 들을 Card 형태로 까진 생성 완료함 (2021-09-03)
+
 
 ## 참고 이미지
 
