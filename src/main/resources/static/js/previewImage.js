@@ -1,8 +1,10 @@
 /*  ==========================================
     SHOW UPLOADED IMAGE
 * ========================================== */
+
+
 function readURL(input) {
-    if (input.files && input.files[0]) {
+    if (input!=null) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
