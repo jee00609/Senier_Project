@@ -49,6 +49,14 @@
                             $('#progress-bar').text('0%');
                             $('#progress-bar').attr('aria-valuenow', 0);
                             $('#progress').css('visibility', 'visible');
+							//css 에서 바꿨다만 더 추가합니다
+							$('#objectCard1').css('visibility', 'hidden');
+							$('#objectCard2').css('visibility', 'hidden');
+							$('#objectCard3').css('visibility', 'hidden');
+							$('#object').text('');
+							$('#objectCardList').text('');
+							
+							
 
                         },
                         success: function (data) {
@@ -63,28 +71,68 @@
                                 $('#aws-link').text(data.url);
                                 $('#aws-link').attr('href', data.url); 
                                 $('#aws-link').css('visibility', 'visible');
-
                                 				    
 							    
 								console.log(data);
 								
+								let key = "";
 								let keys = [];
 								let values = [];
 								let findString = "object";
+								let objectCard = 0;
 								
-								for(let key in data){
+								while(keys.length>0){
+									keys.pop();
+								}
+								
+								for(key in data){
 									keys.push(key);
 									values.push(data[key]);
 									
 									if(key.indexOf(findString) != -1) {
 										console.log(key + " : " + data[key]);
-										const $newStudent = $("<li>"+data[key]+"</li>");
-										$("#object").append($newStudent);	
+										console.log(jQuery.type(key));
 										
-										const $newObject3 = document.getElementById('objectCard');
-										const $test1 = $newObject3.cloneNode(true);
-									
-										document.getElementById('contentPanel').append($test1); 
+										let $newStudent = $("<li>"+data[key]+"</li>");
+										$("#object").append($newStudent);
+										
+										objectCard = Math.floor(Math.random() * 3) + 1;
+										
+										
+										if(objectCard==1){
+											let $originalObject = document.getElementById('objectCard1');
+											
+											let $newObject = $originalObject.cloneNode(true);
+											$newObject.style.visibility = 'visible';
+											let $targetDiv = $newObject.getElementsByClassName("txt")[0];
+											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
+											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
+											
+											document.getElementById('objectCardList').appendChild($newObject);
+										}
+										else if(objectCard==2){
+											let $originalObject = document.getElementById('objectCard2');
+											
+											let $newObject = $originalObject.cloneNode(true);
+											$newObject.style.visibility = 'visible';
+											let $targetDiv = $newObject.getElementsByClassName("txt")[0];
+											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
+											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
+											
+											document.getElementById('objectCardList').appendChild($newObject);
+										}
+										else{
+											let $originalObject = document.getElementById('objectCard3');
+											
+											let $newObject = $originalObject.cloneNode(true);
+											$newObject.style.visibility = 'visible';
+											let $targetDiv = $newObject.getElementsByClassName("txt")[0];
+											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
+											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
+											
+											document.getElementById('objectCardList').appendChild($newObject);
+										}
+
 									}
 								
 								}

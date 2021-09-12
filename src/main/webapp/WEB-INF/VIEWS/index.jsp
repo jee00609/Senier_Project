@@ -108,9 +108,13 @@
 
     <div class="container h-50">
 	  <div class="row align-middle" id="objectCardList">
-	  
-	  
-	    <div class="col-md-6 col-lg-4 column" id = "objectCard">
+
+	    
+	  </div>
+	</div>
+	
+	<div class="container h-50" id="contentPanel">
+		<div class="col-md-6 col-lg-4 column" id = "objectCard1">
 	      <div class="card gr-1">
 	        <div class="txt">
 	          <h2>Car</h2>
@@ -121,7 +125,7 @@
 	    </div>
 	    
 	    
-	    <div class="col-md-6 col-lg-4 column">
+	    <div class="col-md-6 col-lg-4 column" id = "objectCard2">
 	      <div class="card gr-2">
 	        <div class="txt">
 	          <h2>Footwear</h2>
@@ -132,7 +136,7 @@
 	    </div>
 	    
 	    
-	    <div class="col-md-6 col-lg-4 column">
+	    <div class="col-md-6 col-lg-4 column" id = "objectCard3">
 	      <div class="card gr-3">
 	        <div class="txt">
 	          <h2>Sunset</h2>
@@ -141,22 +145,6 @@
 	        <a href="#">more</a>
 	      </div>
 	    </div>
-	    
-	    <div class="col-md-6 col-lg-4 column">
-	      <div class="card gr-3">
-	        <div class="txt">
-	          <h2>Sunset</h2>
-	          <p>User Interface and User Experience Design.</p>
-	        </div>
-	        <a href="#">more</a>
-	      </div>
-	    </div>
-	    
-	  </div>
-	</div>
-	
-	<div class="row" id="contentPanel">
-
     </div>
 
 
@@ -176,7 +164,7 @@
     <script src="../js/ajaxLoad.js"></script>
 
     <!-- 업로드할 이미지 프리뷰 -->
-    <script src="../js/previewImage.js"></script>
+    <script type="text/javascript" src="../js/previewImage.js"></script>
 
 
 
