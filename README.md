@@ -15,6 +15,7 @@
 
 2. Rekognition 으로 얻은 값을 Card 안에 추가하여 생성하기
    * Rekognition 을 통해 얻은 Object 들을 Card 형태로 까진 생성 완료함 (2021-09-03)
+   * 이미지 각각 마다 Rekognition 을 통해 얻은 Object를 가져오면서 랜덤으로 3종류의 색 중 하나를 골라 카드 색을 바꾼다 (2021-09-12)
 
 
 ## 참고 이미지
@@ -30,3 +31,7 @@
 * Card UI
 
 ![Card](https://user-images.githubusercontent.com/31675804/131831160-cb8b9fcd-0ef2-4900-acca-2da6ca9c047b.gif)
+
+* 이미지마다 동적으로 카드 값과 색이 출력된다.
+
+![Card Dynamic Change](https://user-images.githubusercontent.com/31675804/132990451-6b1ae90c-576a-4a29-8ab8-fa310e19620c.gif)
