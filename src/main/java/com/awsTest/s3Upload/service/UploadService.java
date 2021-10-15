@@ -16,10 +16,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class UploadService {
@@ -109,6 +112,34 @@ public class UploadService {
 
 
             return "https://s3."+clientRegion+".amazonaws.com/"+bucketNameAudio+"/"+fileObjKeyName;
+        }
+    }
+    
+    public String uploadAudioAsset(HttpServletRequest request,MultipartFile file) throws IOException, InvalidFileFormatException, InvalidFileSizeException, AmazonServiceException, SdkClientException{
+//        String fileName = file.getOriginalFilename();
+    	String fileName = "inputAudio.wav";
+
+        if (!file.getContentType().contains("audio/")) {
+            throw new InvalidFileFormatException();
+        }else if(file.getSize() > maxFileSize){
+            throw new InvalidFileSizeException();
+        } else {
+        	
+        	try {
+				String uploadDir = "/audio/";
+				String realPathUpload = request.getServletContext().getRealPath(uploadDir);
+
+				String filePath = realPathUpload + fileName;
+
+				File files = new File(filePath);
+				file.transferTo(files);
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+
+            return fileName;
         }
     }
 

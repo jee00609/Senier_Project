@@ -7,13 +7,18 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.services.rekognition.model.Label;
 import com.awsTest.s3Upload.exception.InvalidFileFormatException;
 import com.awsTest.s3Upload.exception.InvalidFileSizeException;
+import com.awsTest.s3Upload.service.ETRIapiService;
 import com.awsTest.s3Upload.service.RekognitionService;
 import com.awsTest.s3Upload.service.UploadService;
 
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,6 +28,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 public class s3UploadController {
 
@@ -30,6 +38,8 @@ public class s3UploadController {
     private UploadService uploadService;
     @Autowired
     private RekognitionService rekognitionService = new RekognitionService();
+    @Autowired
+    private ETRIapiService etriapiService = new ETRIapiService();
     
 
     @PostMapping("/upload")
@@ -90,9 +100,48 @@ public class s3UploadController {
     }
     
     
+//    @PostMapping("/upload2")
+//    @ResponseBody
+//    public Map<String, String> upload2(@RequestParam("file") MultipartFile file) {
+//
+//        Map<String, String> response = new HashMap<>();
+//
+//        boolean isOperationSuccess = false;
+//        String message = null;
+//        String audioUrl = null;
+//
+//        try{
+//        	audioUrl = uploadService.uploadAudio(file);
+//            message = "Audio successfully uploaded.";
+//            isOperationSuccess = true;
+//        }catch (IOException e){
+//            message = "Something wrong with the uploaded file.";
+//            e.printStackTrace();
+//        }catch (InvalidFileFormatException e){
+//            message = "Uploaded file is not an Audio file.";
+//            e.printStackTrace();
+//        }catch (InvalidFileSizeException e){
+//            message = "Maximum supported Audio file size is 10MB";
+//            e.printStackTrace();
+//        }catch (AmazonServiceException e){
+//            message = "Something wrong with Amazon S3.";
+//            e.printStackTrace();
+//        }catch (SdkClientException e){
+//            message = "Cannot connect with Amazon S3.";
+//            e.printStackTrace();
+//        }
+//
+//
+//        response.put("success", String.valueOf(isOperationSuccess));
+//        response.put("message", message);
+//        response.put("url", audioUrl);
+//
+//        return response;
+//    }
+    
     @PostMapping("/upload2")
     @ResponseBody
-    public Map<String, String> upload2(@RequestParam("file") MultipartFile file) {
+    public Map<String, String> upload2(HttpServletRequest request,@RequestParam("file") MultipartFile file) {
 
         Map<String, String> response = new HashMap<>();
 
@@ -101,7 +150,7 @@ public class s3UploadController {
         String audioUrl = null;
 
         try{
-        	audioUrl = uploadService.uploadAudio(file);
+        	audioUrl = uploadService.uploadAudioAsset(request,file);
             message = "Audio successfully uploaded.";
             isOperationSuccess = true;
         }catch (IOException e){
@@ -124,12 +173,69 @@ public class s3UploadController {
 
         response.put("success", String.valueOf(isOperationSuccess));
         response.put("message", message);
-        response.put("url", audioUrl);
+//        response.put("url", audioUrl);
+        response.put("audioName", audioUrl);
 
         return response;
     }
     
     
+    
+//    @PostMapping(value = "/printScore")
+//    public void printScore(Model model, HttpServletResponse response) throws Exception {
+//    	Double score = etriapiService.etriApi(); // 점수 받아오기 성공
+//
+//    	
+//    	model.addAttribute("score", score);
+//    	
+//    	response.sendRedirect("/");
+//    }
+    
+//    @PostMapping("/printScore")
+//    @ResponseBody
+//    public Map<String, Object> ajax(Model model) {
+//
+//    	Double score = etriapiService.etriApi();
+//    	Map<String, Object> map = new HashMap<String, Object>();
+//
+//    	System.out.println("socre is "+score);
+//    	map.put("score", score);
+//
+//    	return map;
+//    }
+    
+    @PostMapping("/printScore")
+    @ResponseBody
+    public String ajax(Model model) {
+
+    	Double score = etriapiService.etriApi();
+
+    	String scoreStr = score.toString();
+
+    	return scoreStr;
+    }
+    
+
+// 	@GetMapping("/test")
+// 	public String library_introduce() {
+// 		return "test";
+// 	}
+    
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+  	public String library_introduce(HttpServletRequest request, HttpServletResponse response, Model model) {
+    	String audioName = request.getParameter("audioName");
+    	String objName = request.getParameter("objName");
+    	
+    	model.addAttribute("audioName", audioName);
+    	model.addAttribute("objName", objName);
+    	
+    	return "test";
+  	}
+    
+    @RequestMapping(value = "/test2", method = RequestMethod.GET)
+  	public String library_introduce2() {
+  		return "test2";
+  	}
     
     
 }

@@ -42,6 +42,7 @@
                             $('#alert').removeClass('alert-success');
                             $('#alert').removeClass('alert-danger');
                             $('#message').text('');
+							$('#audioName').text(data.message);
                             $('#aws-link').text('');
                             $('#aws-link').css('visibility', 'hidden');
                             $('#progress-bar').removeClass('bg-success');
@@ -55,6 +56,8 @@
 							$('#objectCard3').css('visibility', 'hidden');
 							$('#object').text('');
 							$('#objectCardList').text('');
+							$('#objectCardList').className = "row align-middle";
+							$('#newid').remove();
 							
 							
 
@@ -96,9 +99,10 @@
 										let $newStudent = $("<li>"+data[key]+"</li>");
 										$("#object").append($newStudent);
 										
+										//랜덤지정 - 색상
 										objectCard = Math.floor(Math.random() * 3) + 1;
 										
-										
+										//색깔 변경
 										if(objectCard==1){
 											let $originalObject = document.getElementById('objectCard1');
 											
@@ -118,6 +122,10 @@
 											let $targetDiv = $newObject.getElementsByClassName("txt")[0];
 											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
 											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
+											
+											let $targetDiv2 = $newObject.getElementsByClassName("more")[0];
+											$targetDiv2.innerHTML = "<a href='javascript:void(0);' onclick='createDiv(&quot;"+data[key]+"&quot;);'>more</a>";
+											
 											
 											document.getElementById('objectCardList').appendChild($newObject);
 										}
@@ -145,6 +153,7 @@
 
                             }
                             $('#message').text(data.message);
+							
  
                             
                             
@@ -202,6 +211,9 @@
                             $('#alert').removeClass('alert-success');
                             $('#alert').removeClass('alert-danger');
                             $('#message').text('');
+
+							$('#audioName').text('');
+
                             $('#aws-link').text('');
                             $('#aws-link').css('visibility', 'hidden');
                             $('#progress-bar').removeClass('bg-success');
@@ -219,9 +231,9 @@
                             if(data.success.toLowerCase() == "true" ){
                                 $('#alert').addClass('alert-success');
                                 $('#alert-heading').text('Upload Completed!');
-                                $('#aws-link').text(data.url);
-                                $('#aws-link').attr('href', data.url);
-                                $('#aws-link').css('visibility', 'visible');
+                                //$('#aws-link').text(data.url);
+                                //$('#aws-link').attr('href', data.url);
+                                //$('#aws-link').css('visibility', 'visible');
                             }else{
                                 $('#alert').addClass('alert-danger');
                                 $('#alert-heading').text('Error!');
@@ -229,6 +241,8 @@
 
                             }
                             $('#message').text(data.message);
+							$('#audioName').text(data.audioName);
+							console.log(data.audioName);
                         },
                         xhr: function () {
                             var xhr = new window.XMLHttpRequest();
