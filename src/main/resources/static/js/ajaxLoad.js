@@ -112,6 +112,9 @@
 											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
 											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
 											
+											let $targetDiv2 = $newObject.getElementsByClassName("more")[0];
+											$targetDiv2.innerHTML = "<a href='javascript:void(0);' onclick='createDiv(&quot;"+data[key]+"&quot;);'>more</a>";
+											
 											document.getElementById('objectCardList').appendChild($newObject);
 										}
 										else if(objectCard==2){
@@ -124,8 +127,9 @@
 											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
 											
 											let $targetDiv2 = $newObject.getElementsByClassName("more")[0];
+											//console.log("heyyyyyyyyyyyy"+data.audioName);
 											$targetDiv2.innerHTML = "<a href='javascript:void(0);' onclick='createDiv(&quot;"+data[key]+"&quot;);'>more</a>";
-											
+
 											
 											document.getElementById('objectCardList').appendChild($newObject);
 										}
@@ -137,6 +141,9 @@
 											let $targetDiv = $newObject.getElementsByClassName("txt")[0];
 											//$targetDiv.innerHTML = "<h2>Goodbye world!</h2>";
 											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
+											
+											let $targetDiv2 = $newObject.getElementsByClassName("more")[0];
+											$targetDiv2.innerHTML = "<a href='javascript:void(0);' onclick='createDiv(&quot;"+data[key]+"&quot;);'>more</a>";
 											
 											document.getElementById('objectCardList').appendChild($newObject);
 										}
