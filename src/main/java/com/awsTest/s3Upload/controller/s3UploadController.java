@@ -8,6 +8,8 @@ import com.amazonaws.services.rekognition.model.Label;
 import com.awsTest.s3Upload.exception.InvalidFileFormatException;
 import com.awsTest.s3Upload.exception.InvalidFileSizeException;
 import com.awsTest.s3Upload.service.ETRIapiService;
+import com.awsTest.s3Upload.service.EngToKorService;
+import com.awsTest.s3Upload.service.FindTranslatedTextService;
 import com.awsTest.s3Upload.service.RekognitionService;
 import com.awsTest.s3Upload.service.UploadService;
 
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +43,10 @@ public class s3UploadController {
     private RekognitionService rekognitionService = new RekognitionService();
     @Autowired
     private ETRIapiService etriapiService = new ETRIapiService();
+    @Autowired
+    private EngToKorService engToKorServie = new EngToKorService();
+    @Autowired
+    private FindTranslatedTextService findTranslatedTextService = new FindTranslatedTextService();
     
 
     @PostMapping("/upload")
@@ -204,16 +211,16 @@ public class s3UploadController {
 //    	return map;
 //    }
     
-    @PostMapping("/printScore")
-    @ResponseBody
-    public String ajax(Model model) {
-
-    	Double score = etriapiService.etriApi();
-
-    	String scoreStr = score.toString();
-
-    	return scoreStr;
-    }
+//    @PostMapping("/printScore")
+//    @ResponseBody
+//    public String ajax(Model model) {
+//
+//    	Double score = etriapiService.etriApi();
+//
+//    	String scoreStr = score.toString();
+//
+//    	return scoreStr;
+//    }
     
 
 // 	@GetMapping("/test")
@@ -223,11 +230,27 @@ public class s3UploadController {
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
   	public String library_introduce(HttpServletRequest request, HttpServletResponse response, Model model) {
+    	
     	String audioName = request.getParameter("audioName");
     	String objName = request.getParameter("objName");
     	
+    	String objString = "I can see "+objName.toString();
+    	Double score = etriapiService.etriApi(audioName,objString);
+    	score = Math.round(score * 100) / 100.0;
+    	
+    	String scoreStr = score.toString();
+    	
+    	String papago = engToKorServie.EngToKor(objName);
+    	String translateInput = findTranslatedTextService.findTranslatedText(papago);
+    	
+    	if(translateInput == null) {
+    		translateInput = "Oops I don't know this Sorry!";
+    	}
+    	
     	model.addAttribute("audioName", audioName);
     	model.addAttribute("objName", objName);
+    	model.addAttribute("scoreStr", scoreStr);
+    	model.addAttribute("translateText", translateInput);
     	
     	return "test";
   	}

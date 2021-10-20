@@ -30,7 +30,8 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
 	rel="stylesheet3">
 
-<title>Image And Audio Uploader | IT15555854</title>
+<title>Pictures Sea</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 </head>
 
 <body>
@@ -161,7 +162,9 @@
 						<h2>Car</h2>
 						<p>Visual communication and problem-solving</p>
 					</div>
-					<a href="#">more</a>
+					<div class="more">
+						<a href="#">more</a>
+					</div>
 				</div>
 			</div>
 
@@ -185,7 +188,9 @@
 						<h2>Sunset</h2>
 						<p>User Interface and User Experience Design.</p>
 					</div>
-					<a href="#">more</a>
+					<div class="more">
+						<a href="#">more</a>
+					</div>
 				</div>
 			</div>
 

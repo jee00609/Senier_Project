@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +13,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>MINGW's Library</title>
+<title>Rating Score</title>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Bootstrap icons-->
 <link
@@ -57,8 +60,7 @@
 				class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
 				<div class="col-12 col-lg-5">
 					<h2 class="display-4 lh-1 mb-4"><c:out value='${objName}'></c:out></h2>
-					<p class="lead fw-normal text-muted mb-5 mb-lg-0">여기다가 오브젝트 명을
-						박을까?.</p>
+					<p class="lead fw-normal text-muted mb-5 mb-lg-0"><c:out value='${translateText}'></c:out></p>
 				</div>
 				<div class="col-sm-8 col-md-6">
 
@@ -79,10 +81,13 @@
 		<div class="container px-5">
 			<div class="row gx-5 justify-content-center">
 				<div class="col-xl-8">
-					<div class="h2 fs-1 text-white mb-4">"이쪽 아래 사진을 각각 나누어 1~5점으로
-						바꾸도록 해볼까?"</div>
-					<img src="assets/img/logo_transparent.png" alt="..."
-						style="height: 25rem" />
+					<div class="h2 fs-1 text-white mb-4">Your Speaking Score is</div>
+					
+					<!--
+					<img src="assets/img/logo_transparent.png" alt="..." style="height: 25rem" />
+					-->
+						<h2 class="display-4 lh-1 mb-4"><c:out value='${scoreStr}'></c:out></h2>
+						<h3 class="font-alt"> 1.00 (MIN) ~ 5.00 (MAX)</h3>
 				</div>
 			</div>
 		</div>
@@ -96,11 +101,9 @@
 						<div class="row">
 							<!-- Feature item-->
 							<div class="text-center">
-								<img src="assets/img/open-book.png" alt="..."
-									style="height: 5rem" />
-								<h3 class="font-alt">Reading, Dream</h3>
-								<p class="text-muted mb-0">대충 여기다가 선택한 카드 오브젝트에 대한 영-한 사전
-									정의를 띄우고 싶다</p>
+								<img src="assets/img/thinking.png" alt="..." style="height: 5rem" />
+								<h3 class="font-alt">만약 발음 점수가 지나치게 낮게 나온 경우? (EX-0.0)</h3>
+								<p class="text-muted mb-0">다시 녹음하고 파일을 업로드 후 Rating 해보세요!</p>
 							</div>
 						</div>
 					</div>
