@@ -116,8 +116,8 @@ public class UploadService {
     }
     
     public String uploadAudioAsset(HttpServletRequest request,MultipartFile file) throws IOException, InvalidFileFormatException, InvalidFileSizeException, AmazonServiceException, SdkClientException{
-//        String fileName = file.getOriginalFilename();
-    	String fileName = "inputAudio.wav";
+        String fileName = file.getOriginalFilename();
+//    	String fileName = "inputAudio.wav";
 
         if (!file.getContentType().contains("audio/")) {
             throw new InvalidFileFormatException();

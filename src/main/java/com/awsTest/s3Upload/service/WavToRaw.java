@@ -42,11 +42,14 @@ public class WavToRaw {
 
 	//바이트 배열을 Raw 파일로 저장
 	//Save byte array as Raw file
-	public void SaveRaw(File file) throws UnsupportedAudioFileException {
+	public void SaveRaw(String audioName,File file) throws UnsupportedAudioFileException {
 		OutputStream output = null;
 
 		try {
-			output = new FileOutputStream("src/main/webapp/audio/inputAudio.raw");
+			
+			String fileName = "src/main/webapp/audio/"+audioName+".raw";
+//			output = new FileOutputStream("src/main/webapp/audio/inputAudio.raw");
+			output = new FileOutputStream(fileName);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,6 +59,8 @@ public class WavToRaw {
 			//핵심 코드
 			//core code
 			output.write(formatWavToRaw(changeFormat(AudioToByte(file), FORMAT)));
+			output.flush();
+			output.close();
 
 			System.out.print("Success");
 
