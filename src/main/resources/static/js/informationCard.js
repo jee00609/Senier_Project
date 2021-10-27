@@ -62,7 +62,7 @@ function button1_click(objName){
 	console.log(inputAudio);
 	
 	try{
-		window.open(`/test?audioName=${inputAudio}&objName=${objName}`,'_blank');
+		window.open(`/printScore?audioName=${inputAudio}&objName=${objName}`,'_blank');
 		console.log("Yeahhhhhhhhhhh");
 	}catch(e){
 		console.log(e);
