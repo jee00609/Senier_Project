@@ -96,8 +96,9 @@
 										console.log(key + " : " + data[key]);
 										console.log(jQuery.type(key));
 										
-										let $newStudent = $("<li>"+data[key]+"</li>");
-										$("#object").append($newStudent);
+										//test 용
+										//let $newStudent = $("<li>"+data[key]+"</li>");
+										//$("#object").append($newStudent);
 										
 										//랜덤지정 - 색상
 										objectCard = Math.floor(Math.random() * 3) + 1;
