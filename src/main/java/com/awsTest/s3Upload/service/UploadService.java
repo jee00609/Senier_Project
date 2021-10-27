@@ -130,8 +130,14 @@ public class UploadService {
 				String realPathUpload = request.getServletContext().getRealPath(uploadDir);
 
 				String filePath = realPathUpload + fileName;
+				
+				if(! new File(realPathUpload).exists()) {
+					  new File(realPathUpload).mkdir();
+				}
 
 				File files = new File(filePath);
+				
+				
 				file.transferTo(files);
 
 			} catch (Exception ex) {
