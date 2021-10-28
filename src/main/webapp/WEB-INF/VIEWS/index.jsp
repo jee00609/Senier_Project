@@ -61,7 +61,6 @@
                 <div id="alert" class="alert alert-dismissible fade show" role="alert">
                     <h5 id="alert-heading" class="alert-heading">Upload Completed!</h5>
                     <p id="message"></p>
-                    <p id="audioName"></p>
                     <p>
                         <a id="aws-link" target="_blank" href="#"></a>
                     </p>
@@ -158,6 +157,7 @@
     <div class="h-50 bg-light">
     	<div class="content">
 			<h3 class="text-center title lh-1 mb-4">이 아래에 선택한 이미지의 Object 들이 출력됩니다.</h3>
+			<p id="audioName" style="display:none"></p>
 		</div>
     </div>
 

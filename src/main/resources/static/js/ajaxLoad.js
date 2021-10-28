@@ -42,7 +42,6 @@
                             $('#alert').removeClass('alert-success');
                             $('#alert').removeClass('alert-danger');
                             $('#message').text('');
-							$('#audioName').text(data.message);
                             $('#aws-link').text('');
                             $('#aws-link').css('visibility', 'hidden');
                             $('#progress-bar').removeClass('bg-success');
@@ -128,7 +127,6 @@
 											$targetDiv.innerHTML = "<h2>"+data[key]+"</h2>";
 											
 											let $targetDiv2 = $newObject.getElementsByClassName("more")[0];
-											//console.log("heyyyyyyyyyyyy"+data.audioName);
 											$targetDiv2.innerHTML = "<a href='javascript:void(0);' onclick='createDiv(&quot;"+data[key]+"&quot;);'>more</a>";
 
 											
@@ -220,7 +218,7 @@
                             $('#alert').removeClass('alert-danger');
                             $('#message').text('');
 
-							$('#audioName').text('');
+							
 
                             $('#aws-link').text('');
                             $('#aws-link').css('visibility', 'hidden');
@@ -242,6 +240,9 @@
                                 //$('#aws-link').text(data.url);
                                 //$('#aws-link').attr('href', data.url);
                                 //$('#aws-link').css('visibility', 'visible');
+
+								let inputAudio = document.getElementById('audioName');
+								inputAudio.innerHTML = data.audioName;
                             }else{
                                 $('#alert').addClass('alert-danger');
                                 $('#alert-heading').text('Error!');
@@ -249,7 +250,7 @@
 
                             }
                             $('#message').text(data.message);
-							$('#audioName').text(data.audioName);
+							
 							console.log(data.audioName);
                         },
                         xhr: function () {
