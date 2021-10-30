@@ -212,6 +212,7 @@
 
 
     <div id="getText" style="display: none;">
+    
         <div class="box box-down cyan" style="width: 800px;" id=specifyCard1>
             <div class="txt">
                 <h2>Supervisor</h2>
@@ -220,26 +221,28 @@
             </div>
         </div>
 
-        <div class="box red" style="width: 800px;" id="specifyCard2">
-            <h2>Team Builder</h2>
-            <p>Scans our talent network to create the optimal team for your
-                project</p>
-            <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+        <div class="box box-down red" style="width: 800px;" id="specifyCard2">
+        	<div class="txt">
+                <h2>Supervisor</h2>
+                <p>Monitors activity to identify project roadblocks</p>
+                <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+            </div>
         </div>
 
         <div class="box box-down blue" style="width: 800px;" id="specifyCard3">
-            <h2>Calculator</h2>
-            <p>Uses data from past projects to provide better delivery
-                estimates</p>
-            <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+        	<div class="txt">
+                <h2>Supervisor</h2>
+                <p>Monitors activity to identify project roadblocks</p>
+                <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+            </div>
         </div>
 
-
-
-        <div class="box orange" style="width: 800px;" id="specifyCard4">
-            <h2>Karma</h2>
-            <p>Regularly evaluates our talent to ensure quality</p>
-            <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+        <div class="box box-down orange" style="width: 800px;" id="specifyCard4">
+        	<div class="txt">
+                <h2>Supervisor</h2>
+                <p>Monitors activity to identify project roadblocks</p>
+                <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+            </div>
         </div>
 
     </div>

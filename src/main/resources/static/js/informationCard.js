@@ -12,21 +12,54 @@ function createDiv(thisObj) {
 	}
 	
 	let $specifyCard = document.getElementById('specifyCard1');
+	
+	if(color==1){
+		$specifyCard = document.getElementById('specifyCard1');
+	}
+	else if(color==2){
+		$specifyCard = document.getElementById('specifyCard2');
+	}
+	else if(color==3){
+		$specifyCard = document.getElementById('specifyCard3');
+	}
+	else if(color==4){
+		$specifyCard = document.getElementById('specifyCard4');
+	}
+	
 	let $newspecifyCard = $specifyCard.cloneNode(true);
 	$newspecifyCard.id = "newid";
 	let $targetObject = $newspecifyCard.getElementsByClassName("txt")[0];
-
 	
-	//주석
 	
-	$targetObject.innerHTML = `
+	if(color==1){
+		$targetObject.innerHTML = `
 							<h2>${thisObj}</h2>
 							<p>Please Speak "I can see ${thisObj}" loudly</p>
 							<img src='https://assets.codepen.io/2301174/icon-supervisor.svg' alt=''>
 							`;
-							
-	//let inputAudio = "audioName.wav"
-	//let inputAudio = document.getElementById('audioName').innerText;
+	}
+	else if(color==2){
+		$targetObject.innerHTML = `
+							<h2>${thisObj}</h2>
+							<p>Please Speak "I can see ${thisObj}" loudly</p>
+							<img src='https://assets.codepen.io/2301174/icon-team-builder.svg' alt=''>
+							`;
+	}
+	else if(color==3){
+		$targetObject.innerHTML = `
+							<h2>${thisObj}</h2>
+							<p>Please Speak "I can see ${thisObj}" loudly</p>
+							<img src='https://assets.codepen.io/2301174/icon-calculator.svg' alt=''>
+							`;
+	}
+	else if(color==4){
+		$targetObject.innerHTML = `
+							<h2>${thisObj}</h2>
+							<p>Please Speak "I can see ${thisObj}" loudly</p>
+							<img src='https://assets.codepen.io/2301174/icon-karma.svg' alt=''>
+							`;
+	}
+
 	
 	
 	
