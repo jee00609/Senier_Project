@@ -12,6 +12,7 @@ import com.awsTest.s3Upload.service.EngToKorService;
 import com.awsTest.s3Upload.service.FindTranslatedTextService;
 import com.awsTest.s3Upload.service.RekognitionService;
 import com.awsTest.s3Upload.service.UploadService;
+import com.awsTest.s3Upload.service.deleteFileService;
 
 import org.springframework.stereotype.*;
 import org.springframework.ui.*;
@@ -48,8 +49,12 @@ public class s3UploadController {
     @Autowired
     private FindTranslatedTextService findTranslatedTextService = new FindTranslatedTextService();
     
-    @GetMapping("/index")
+    @Autowired
+    private deleteFileService deleteFileService = new deleteFileService();
+    
+    @GetMapping("/")
 	public String admin_index() {
+    	deleteFileService.deleteFiles();
 		return "index";
 	}
     
@@ -115,6 +120,8 @@ public class s3UploadController {
     @PostMapping("/upload2")
     @ResponseBody
     public Map<String, String> upload2(HttpServletRequest request,@RequestParam("file") MultipartFile file) {
+    	
+    	deleteFileService.deleteFiles();
 
         Map<String, String> response = new HashMap<>();
 
