@@ -1,7 +1,5 @@
 <%@page import="com.awsTest.s3Upload.service.ETRIapiService"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -26,7 +24,7 @@
     <link rel="stylesheet2" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet3">
 
-    <title>Pictures Sea</title>
+    <title>Pictures, Sea</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 </head>
 
@@ -34,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg static-top ">
         <div class="container px-5">
-            <a class="navbar-brand" href="/">Pictures Sea</a>
+            <a class="navbar-brand" href="/">Pictures, Sea</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -77,7 +75,7 @@
 
                 <div class="content">
 
-                    <h1 class="text-white display-1 lh-1 mb-4 text-center title">Pictures Sea</h1>
+                    <h1 class="text-white display-1 lh-1 mb-4 text-center title">Pictures, Sea</h1>
 
                     <div class="row">
 
@@ -91,10 +89,8 @@
                                     </div>
                                 </div>
                             </form>
-                            <p class="text-right text-muted">Maximum supported image size
-                                is 10MB</p>
-                            <p class="text-right text-muted">The image uploaded will be
-                                rendered inside the box below.</p>
+                            <p class="text-right text-muted">Maximum supported image size is 10MB</p>
+                            <p class="text-right text-muted">The image uploaded will be rendered inside the box below.</p>
                             <div class="image-area mt-4">
                                 <img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
                             </div>
@@ -120,11 +116,6 @@
                                     <!-- <p>Convert recorded audio to:</p> -->
                                     <select id="encodingTypeSelect">
                                         <option value="wav">Waveform Audio (.wav)</option>
-
-                                        <!--
-				                <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
-				                <option value="ogg">Ogg Vorbis (.ogg)</option>
-				                -->
                                     </select>
 
                                     <div id="controls">
@@ -132,9 +123,6 @@
                                         <button id="stopButton" disabled>Stop</button>
                                     </div>
                                     <div id="formats"></div>
-                                    <!--
-				            <pre>Log</pre>
-				            -->
                                     <pre id="log"></pre>
 
                                     <pre>Recordings</pre>
@@ -249,23 +237,14 @@
 
 
     <div id="justBlank" style="height: 200px; visibility: hidden;">
-        INNER TEXT</div>
+        INNER TEXT
+    </div>
 
-    <!-- 	<form method="POST" action="/printScore" enctype="multipart/form-data">
-		<section class="bg-light border-bottom" id="plz">
-			<!--<c:out value='${score}'/>-->
-    <!-- </section>
-	</form>
-	<form method="POST" action="/printScore" enctype="multipart/form-data">
-		
-	</form>
-	
-	-->
     <section class="bg-light border-bottom" id="plz">
     </section>
     
     <footer class="py-5 bg-dark">
-            <div class="px-5"><p class="m-0 text-center text-white small">Copyright &copy; Senier Project 2021</p></div>
+            <div class="px-5"><p class="m-0 text-center text-white small">Copyright &copy; Senior Project 2021</p></div>
     </footer>
 
 
