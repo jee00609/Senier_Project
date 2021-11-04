@@ -11322,7 +11322,7 @@ header.masthead {
   overflow: hidden;
   padding-top: calc(7rem + 72px);
   padding-bottom: 7rem;
-  background-image: url("https://source.unsplash.com/Q1p7bh3SHj8/1500x800");
+  background-image: url("/assets/img/introduce.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;

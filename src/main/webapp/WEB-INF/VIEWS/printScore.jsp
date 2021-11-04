@@ -54,7 +54,7 @@
 
 					<div class="px-5 px-sm-0">
 						<img class="img-fluid rounded-circle"
-							src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." />
+							src="/assets/img/printscore_1.jpg" alt="..." />
 					</div>
 				</div>
 			</div>

@@ -11784,7 +11784,7 @@ h2 {
 section.cta {
   position: relative;
   padding: 15rem 0;
-  background-image: url("https://source.unsplash.com/YLSwjSy7stw/1500x800");
+  background-image: url("/assets/img/index.jpg");
   background-position: center;
   background-size: cover;
 }
